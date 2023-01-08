@@ -1,0 +1,425 @@
+{
+  "fall_2022": [
+    {
+      "id": 1,
+      "title": "Chainsaw Man",
+      "studio": "MAPPA",
+      "aired": "October 12, 2022",
+      "format": "TV",
+      "genre": ["action", "comedy"],
+      "synopsis": "Denji is a teenage boy living with a Chainsaw Devil named Pochita. Due to the debt his father left behind, he has been living a rock-bottom life while repaying his debt by harvesting devil corpses with Pochita. One day, Denji is betrayed and killed. As his consciousness fades, he makes a contract with Pochita and gets revived as \"Chainsaw Man\" — a man with a devil's heart.",
+      "img": "img/chainsaw_man.jpg"
+    },
+    {
+      "id": 2,
+      "title": "SPYxFAMILY Part 2",
+      "studio": "Wit Studio, CloverWorks",
+      "aired": "October 1, 2022",
+      "format": "TV",
+      "genre": ["action", "comedy"],
+      "synopsis": "The second half of SPYxFAMILY.",
+      "img": "img/spy_x_family_part2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Blue Lock",
+      "studio": "8-bit",
+      "aired": "october 9, 2022",
+      "format": "TV",
+      "genre": ["action", "drama", "sports"],
+      "synopsis": "After a disastrous defeat at the 2018 World Cup, Japan's team struggles to regroup. But what's missing? An absolute Ace Striker, who can guide them to the win. The Japan Football Union is hell-bent on creating a striker who hungers for goals and thirsts for victory, and who can be the decisive instrument in turning around a losing match...and to do so, they've gathered 300 of Japan's best and brightest youth players. Who will emerge to lead the team...and will they be able to out-muscle and out-ego everyone who stands in their way? Note: The first episode received a pre-screening at the AnimagiC convention on August 6, 2022.",
+      "img": "img/blue_lock.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Mob Psycho 100 III",
+      "studio": "Bones",
+      "aired": "October 6, 2022",
+      "format": "TV",
+      "genre": ["action", "comedy"],
+      "synopsis": "The third season of Mob Psycho 100. The appearance of a divine tree and new religion turns Mob and Reigen's city upside down!",
+      "img": "img/mob_psycho_100_iii.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Boku no Hero Academia 6",
+      "studio": "Bones",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["action", "adventure", "comedy"],
+      "synopsis": "With Tomura Shigaraki at its helm, the former Liberation Army is now known as the Paranormal Liberation Front. This organized criminal group poses an immense threat to the Hero Association, not only because of its sheer size and strength, but also the overpowering quirks of Jin \"Twice\" Bubaigawara and Gigantomachia. As new intel from the covert hero Keigo \"Hawks\" Takami confirms that Shigaraki is nowhere to be seen, the Hero Association decides to strike the enemy headquarters with a surprise attack using the entirety of its assets—and the UA students find themselves on the battlefield once again. As the fight rages on, the unsuspecting villains must regroup and push back, but the brave heroes are determined to eradicate every last one of them.",
+      "img": "img/boku_no_hero_academia_6.jpg"
+    },
+    {
+      "id": 6,
+      "title": "BLEACH: Sennen Kessen-hen",
+      "studio": "Studio Pierrot",
+      "aired": "October 11, 2022",
+      "format": "TV",
+      "genre": ["action", "adventure"],
+      "synopsis": "Was it all just a coincidence, or was it inevitable? Ichigo Kurosaki gained the powers of a Soul Reaper through a chance encounter. As a Substitute Soul Reaper, Ichigo became caught in the turmoil of the Soul Society, a place where deceased souls gather. But with help from his friends, Ichigo overcame every challenge to become even stronger. When new Soul Reapers and a new enemy appear in his hometown of Karakura, Ichigo jumps back into the battlefield with his Zanpakuto to help those in need. Meanwhile, the Soul Society is observing a sudden surge in the number of Hollows being destroyed in the World of the Living. They also receive separate reports of residents in the Rukon District having gone missing. Finally, the Seireitei, home of the Soul Reapers, comes under attack by a group calling themselves the Wandenreich. Led by Yhwach, the father of all Quincies, the Wandenreich declare war against the Soul Reapers with the following message: \"Five days from now, the Soul Society will be annihilated by the Wandenreich.\" The history and truth kept hidden by the Soul Reapers for a thousand long years is finally brought to light. All things must come to an end as Ichigo Kurosaki's final battle begins!",
+      "img": "img/bleach_sennen_kessen_hen.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Kage no Jitsuryokusha ni Naritakute!",
+      "studio": "Nexus",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["action", "comedy", "fantasy"],
+      "synopsis": "Some people just aren’t suited to playing the part of the flashy, in-your-face hero or the dastardly, mustache-twirling villain with larger-than-life panache. Instead, they operate in the shadows and pull the strings of society through wit and cleverness. That’s the role Cid wants to play when he’s transported to another world. Cid spins a yarn or three and becomes the unlikely leader of the underground Shadow Garden organization that fights against a menacing cult (which he totally made up). However, there’s a catch even his wild imagination didn’t see coming: the cult he concocted actually exists, and they’re beyond displeased that his power fantasy just got in the way of their evil plans!",
+      "img": "img/kage_no_jitsuryokusha_ni_naritakute.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Bocchi the Rock!",
+      "studio": "Cloverworks",
+      "aired": "October 9, 2022",
+      "format": "TV",
+      "genre": ["comedy", "music", "slice of life"],
+      "synopsis": "Gotou Hitori is a high school girl who started learning to play the guitar because she dreams of being in a band, but she's so shy that she hasn't made a single friend. However, her dream might come true after she meets Ijichi Nijika, a girl who plays the drums and is looking for a new guitarist for her band.",
+      "img": "img/bocchi_the_rock.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Fumetsu no Anata e Season 2",
+      "studio": "Drive",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["adventure", "drama", "fantasy"],
+      "synopsis": "After seeing enough death and tragedy, the immortal Fushi secludes himself on an island, defending himself from enemy Nokkers. However, instead of attacking Fushi in isolation, Nokkers begin targeting the settlements outside of his reach in hopes of luring him out. Soon, a group known as the Guardians—led by Hisame, the descendant of the deceased warrior Hayase—finds Fushi. Inspired by how Fushi protected Janada Island from the Nokkers years ago, the Guardians have grown a considerable following and are recognized throughout the world. Initially reluctant, Fushi allows the Guardians to accompany him to the site of the Nokkers' recent attack. In their village, Fushi meets a few valuable allies, both new and old. But as the conflict with the Nokkers only leads to more loss, Fushi must find the inner strength to face his inevitable sorrow.",
+      "img": "img/fumetsu_no_anata_e_season_2.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Tensei Shitara Ken Deshita",
+      "studio": "C2C",
+      "aired": "September 28, 2022",
+      "format": "TV",
+      "genre": ["action", "adventure", "fantasy"],
+      "synopsis": "Some isekai protagonists are reincarnated as powerful warriors or skilled wizards, but our protagonist was reborn in another life as a sentient sword! He’s taken up by Fran, a desperate girl fleeing evil-doers intent on selling her into slavery. With her new weapon’s help and guidance, she’s able to strike down her captors and secure her freedom. Together, this unconventional master-student duo embark on an epic journey to liberate those in need and exact justice on the cruel of heart. Note: Episode 1 was streamed in advance on September 28, 2022 on AbemaTV. The regular TV broadcast began on October 5, 2022.",
+      "img": "img/tensei_shitara_ken_deshita.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Fuufu Ijou, Koibito Miman.",
+      "studio": "MOTHER",
+      "aired": "October 9, 2022",
+      "format": "TV",
+      "genre": ["comedy", "drama", "ecchi"],
+      "synopsis": "Third-year high school student Jirou Yakuin hoped to partner with Shiori Sakurazaka of the same class in the mandatory \"Couple Practical\" course. In this practical, students must demonstrate that they have the necessary skillset to live with a partner of the opposite sex while presenting a certain level of harmony to the video surveillance that grades them. Unfortunately, random chance put his slightly subdued self into the practical with the person polar opposite to him, the gyaru Akari Watanabe. Akari on the other hand hoped to be paired with her crush Minami Tenjin. Their hopes are doubly dashed when they find out that Shiori and Minami are assigned together. Thus, they reluctantly decide to cooperate to reach the top ten, which would give them the right to exchange partners if both couples agree. To that end, Jirou steals Akari's first kiss without realizing what he'd done, while giving a hurried good-bye kiss...",
+      "img": "img/fuufu_ijou_koibito_miman.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Urusei Yatsura (2022)",
+      "studio": "David Production",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["comedy", "romance", "sci-fi"],
+      "synopsis": "When an alien race known as the Oni invade Earth, the chronically unlucky and unapologetically lecherous Ataru Moroboshi is selected as humanity’s representative in a duel for the fate of the planet! His opponent is Lum, the Oni’s very pretty princess, and it’s only thanks to Ataru’s unscrupulous behavior that he’s able to scrape out a win in a treacherous game of tag against her. Ataru thinks he’s had his lucky break at last, but when Lum takes a shine to him off the battlefield, the conflict follows him home as Lum invades not only planet Earth, but also the womanizing Ataru’s love life!",
+      "img": "img/urusei_yatsura_2022.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Uzaki-chan wa Asobitai! ω",
+      "studio": "ENGI",
+      "aired": "October 1, 2022",
+      "format": "TV",
+      "genre": ["comedy", "ecchi", "romance"],
+      "synopsis": "The second season of Uzaki-chan wa Asobitai!.",
+      "img": "img/uzaki_chan_wa_asobitai_w.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Shinobi no Ittoki",
+      "studio": "TROYCA",
+      "aired": "October 4, 2022",
+      "format": "TV",
+      "genre": ["action"],
+      "synopsis": "Ittoki Sakuraba was an ordinary student, until his life was turned upside down! He finds out that he is the 19th heir of the famous Iga Ninjas. The Iga must try to defend what is theirs from the Koga, a rivaling clan seeking to end Ittoki’s life. Ittoki is left with no choice but to become a shinobi that’s strong enough to not only protect himself, but also his village. Now a student at Kokuten Ninja Academy, a high school specializing in shinobi techniques, Ittoki learns the way of the modern-day ninja, equipped with high-tech suits and gadgets. Together with students from other villages, Ittoki clashes with the Koga in an attempt to end the rivalry once and for all.",
+      "img": "img/shinobi_no_ittoki.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Mairimashita! Iruma-kun 3",
+      "studio": "Bandai Namco Pictures",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["comedy", "fantasy"],
+      "synopsis": "The third season of Mairimashita! Iruma-kun. This time it's the jungle! Human boy Suzuki Iruma becomes \"grandson\" to the great demon Sullivan and begins attending demon school where \"Grandpa\" serves as chairman. Winning friends -- and rising in demon rank, too -- Iruma thrives in his new environment, overcoming the harrowing ordeals thrown his way! In the new season, further challenges await... it's harvest season, and time for the annual test where students wade into the expansive and extremely dangerous (!) jungle to compete for food!! Classmates become rivals, and what erupts is a gargantuan battle of brawn and wits?",
+      "img": "img/mairimashita_iruma_kun_3.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Akiba Meido Sensou",
+      "studio": "P.A. Works",
+      "aired": "Ocotober 7, 2022",
+      "format": "TV",
+      "genre": ["action", "comedy", "drama"],
+      "synopsis": "Akihabara is the center of the universe for the coolest hobbies and quirkiest amusements. In the spring of 1999, bright-eyed Nagomi Wahira moves there with dreams of joining a maid café. She quickly dons an apron at café Ton Tokoton, AKA the Pig Hut. But adjusting to life in bustling Akihabara isn’t as easy as serving tea and delighting customers. Paired with the dour Ranko who never seems to smile, Nagomi must do her best to elevate the Pig Hut over all other maid cafés vying for top ranking. Along the way she’ll slice out a place for herself amid the frills and thrills of life at the Pig Hut. Just when Nagomi’s dreams are within her grasp, she discovers not everything is as it seems amid the maid cafés of Akihabara.",
+      "img": "img/akiba_meido_sensou.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Yuusha Party wo Tsuihou Sareta Beast Tamer, Saikyoushu no Nekomimi Shoujo to Deau",
+      "studio": "EMT Squared",
+      "aired": "October 1, 2022",
+      "format": "TV",
+      "genre": ["adventure", "fantasy"],
+      "synopsis": "Because Rain was a weak and simple beast tamer, he was expelled from the hero's group but that didn't stop his desire to be an adventurer. By taking simple quests afterwards he has a destined encounter with a strong cat girl.",
+      "img": "img/yuusha_party_wo_tsuihou_sareta_beast_tamer_saikyoushu_no_nekomimi_shoujo_to_deau.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Akuyaku Reijou nano de Last Boss wo Kattemimashita",
+      "studio": "Maho Film",
+      "aired": "September 24, 2022",
+      "format": "TV",
+      "genre": ["comedy", "fantasy", "romance"],
+      "synopsis": "When Aileen, the Duke’s daughter, regains her memories of her past life, she realizes she’s barreling toward ruin at full speed. Searching for any way out of her hopeless situation, the method she chooses is to capture the heart of the last boss--the Demon Lord Claude!",
+      "img": "img/akuyaku_reijou_nano_de_last_boss_wo_kattemimashita.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Do It Yourself!!",
+      "studio": "PINE JAM",
+      "aired": "Ocotober 6, 2022",
+      "format": "TV",
+      "genre": ["comedy", "slice of life"],
+      "synopsis": "Building furniture and friendships have a lot in common. Intention, effort, and hard work are needed for both crafts. This is a story of girls in a DIY club building both as they carve out their futures. None of it comes easy, but that doesn’t stop any of ’em. Furniture, friendships, and the future—they’re building it all with their own hands!",
+      "img": "img/do_it_yourself.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Kidou Senshi Gundam: Suisei no Majo",
+      "studio": "Sunrise",
+      "aired": "October 2, 2022",
+      "format": "TV",
+      "genre": ["mecha", "sci-fi"],
+      "synopsis": "A.S. (Ad Stella) 122― An era when a multitude of corporations have entered space and built a huge economic system. A lone girl from the remote planet Mercury transfers to the Asticassia School of Technology, run by the Beneritt Group which dominates the mobile suit industry. Her name is Suletta Mercury. With a scarlet light burning in her pure heart, this girl walks step by step through a new world.",
+      "img": "img/kidou_senshi_gundam_suisei_no_majo.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Renai Flops",
+      "studio": "Passione",
+      "aired": "October 12, 2022",
+      "format": "TV",
+      "genre": ["comedy", "ecchi", "romance"],
+      "synopsis": "Asahi Kashiwagi lives the typical life of an average high school student — until the day a TV fortune teller’s predictions come true one after another, culminating in a series of risqué encounters! Destiny seemingly draws five beautiful girls into Asahi’s path, and soon he finds himself fielding not one, not two, but five love confessions. Asahi will need to follow his heart to find the perfect love for him, or else his love fortunes may end in one epic flail and flop.",
+      "img": "img/renai_flops.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Noumin Kanren no Skill Bakka Agetetara Naze ka Tsuyoku Natta",
+      "studio": "A-CAT",
+      "aired": "October 1, 2022",
+      "format": "TV",
+      "genre": ["adventure", "comedy"],
+      "synopsis": "Al Wayne loves farming — and we don’t mean the video game sim. He wants to be a literal farmer, but in the process of improving his agriculture skills, he somehow winds up maxing out his overall character stats! He’s superpowered in the most unexpected of ways with abilities even the strongest of heroes would envy. Alas, all he wants is an idyllic farmer's life, but with demons and monsters invading the realm, Al may have to take up the mantle of hero just to keep his dreams from withering away!",
+      "img": "img/noumin_kanren_no_skill_bakka_agetetara_naze_ka_tsuyoku_natta.jpg"
+    },
+    
+    {
+      "id": 23,
+      "title": "Arknights: Reimei Zensou",
+      "studio": "Yostar Pictures",
+      "aired": "October 29, 2022",
+      "format": "TV",
+      "genre": ["action", "fantasy"],
+      "synopsis": "In the land of Terra, natural disasters of unknown causes have been occurring irregularly in many areas. Therefore, the majority of the people, in order to escape those natural disasters, came to live in mobile cities developed over the years. The Originium left behind at the site of such Catastrophes, has led to the rapid progress of civilization due to their immense energy. But it also brought something else with it — an incurable disease called Oripathy. Because the bodies of those with Oripathy gradually crystalize and become a new source of infection at the time of death, in many countries, the Infected are subject to persecution under regimes of segregation and forced labor. Those who were oppressed by the governments are starting to rebel. Rhodes Island, a pharmaceutical company researching a cure for Oripathy, takes up their arms and starts a conquest trying to save all the people from the disease.",
+      "img": "img/arknights_reimei_zensou.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Koukyuu no Karasu",
+      "studio": "Bandai Namco Pictures",
+      "aired": "October 1, 2022",
+      "format": "TV",
+      "genre": ["mystery"],
+      "synopsis": "Deep within the inner palace lives a special consort who does not serve the emperor despite her position as a consort. She is known as the Raven Consort. People who have seen her say she looks like an old woman, while others say she looks like a young girl. Stories tell of her use of mysterious arts, and how she can take on any request, be it death curses or finding lost things. Koushun, the current emperor, goes to visit the Raven Consort with that intention. Without knowing that their fated meeting will become a taboo that will overturn history.",
+      "img": "img/koukyuu_no_karasu.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Futoku no Guild",
+      "studio": "TNK",
+      "aired": "October 5, 2022",
+      "format": "TV",
+      "genre": ["action", "comedy", "ecchi"],
+      "synopsis": "Kikuru Madan, is a monster hunter with excellent performance, because of his particular job in the forest, but he decided to quit it because of fear wasting his own youth...",
+      "img": "img/futoku_no_guild.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Golden Kamuy 4th Season",
+      "studio": "Brain's Base",
+      "aired": "October 3, 2022",
+      "format": "TV",
+      "genre": ["action", "adventure", "comedy"],
+      "synopsis": "The fourth season of Golden Kamuy.",
+      "img": "img/golden_kamuy_4th_season.jpg"
+    },
+    {
+      "id": 27,
+      "title": "Mushikaburi-hime",
+      "studio": "MADHOUSE",
+      "aired": "October 6, 2022",
+      "format": "TV",
+      "genre": ["drama", "romance"],
+      "synopsis": "Known as the Bibliophile Princess for her unquenchable love of books, Lady Eliana Bernstein wants nothing more than to shirk social duties in favor of retreating to the library. So, when the handsome Crown Prince Christopher promises to shield her from high-society drudgery in exchange for pretending to be his fiancée, she jumps at the chance to hide behind their sham relationship and read to her heart’s content (especially since he’s offered her access to the palace library). But much like the plot of her favorite novel, soon Eli’s feelings for the prince develop in unexpected ways, and she realizes she can’t always judge a royal book by its cover.",
+      "img": "img/mushikaburi_hime.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Shinmai Renkinjutsushi no Tenpo Keiei",
+      "studio": "ENGI",
+      "aired": "October 3, 2022",
+      "format": "TV",
+      "genre": ["fantasy", "slice of life"],
+      "synopsis": "Orphaned Sarasa just graduated from the Royal Alchemist Academy, and that means her longed-for life of elegance and riches is close at hand! As a graduation gift, her teacher gifts her a house to set up shop — but Sarasa’s dilapidated new digs are beyond far-flung. What’s a novice alchemist to do when they're stuck in the middle of nowhere with a business to run and supplies to gather from a very dangerous natural world? Whether it’s facing down frightening fantasy creatures or finding creative ways to attract customers, Sarasa has her work cut out for her as she achieves her dream of becoming the greatest alchemist around!",
+      "img": "img/shinmai_renkinjutsushi_no_tenpo_keiei.jpg"
+    },
+    {
+      "id": 29,
+      "title": "KanColle: Itsuka Ano Umi de",
+      "studio": "ENGI",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["action", "sci-fi"],
+      "synopsis": "A sequel to Kantai Collection: KanColle. Shigure finds herself assigned to the 1st Striking Force 3rd Division for an important upcoming operation along with a surprising variety of other Fleet Girls. What will their role in the next big offensive against the Abyssals be?",
+      "img": "img/kancolle_itsuka_ano_umi_de.jpg"
+    },
+    {
+      "id": 30,
+      "title": "Poputepipikku 2",
+      "studio": "Space Neko Company, Kamikaze Douga",
+      "aired": "October 2, 2022",
+      "format": "TV",
+      "genre": ["comedy"],
+      "synopsis": "The second season of Poputepipikku.",
+      "img": "img/poputepipikku_2.jpg"
+    },
+    {
+      "id": 31,
+      "title": "4-nin wa Sorezore Uso wo Tsuku",
+      "studio": "Studio Flad",
+      "aired": "October 16, 2022",
+      "format": "TV",
+      "genre": ["comedy", "sci-fi", "slice of life"],
+      "synopsis": "The school comedy story follows four friends at a girls' school. They may seem like ordinary second-year junior high school students at first glance, but they are a space pilot, a ninja without a clan, a girl with supernatural powers, and a boy in girls' clothes.",
+      "img": "img/4_nin_wa_sorezore_uso_wo_tsuku.jpg"
+    },
+    {
+      "id": 32,
+      "title": "Berserk: Ougon Jidai-hen - MEMORIAL EDITION",
+      "studio": "4°C",
+      "aired": "October 2, 2022",
+      "format": "TV",
+      "genre": ["action", "adventure", "drama"],
+      "synopsis": "Kentaro Miura's legendary series returns in Berserk: The Golden Age Arc - Memorial Edition. The lone mercenary Guts travels a land where a century-old war is raging. His ferocity and skill in battle attract the attention of Griffith, the leader of a group of mercenaries called the Band of the Hawk. Guts becomes Griffith’s closest ally and confidant, but despite all their victories, Guts begins to question why he fights for another man’s dream of ruling his own kingdom. Unknown to Guts, Griffith’s unyielding ambition is about to bestow a horrible fate on them both. Note: This is a TV broadcast of the Golden Age film trilogy, with hundreds of new cuts including the \"Bonfire of Dreams\" scene and new music by Susumu Hirasawa and Shiro Sagisu.",
+      "img": "img/berserk_ougon_jidai_hen_memorial_edition.jpg"
+    },
+    {
+      "id": 33,
+      "title": "Uchi no Shishou wa Shippo ga Nai",
+      "studio": "LIDENFILMS",
+      "aired": "September 30, 2022",
+      "format": "TV",
+      "genre": ["comedy", "fantasy"],
+      "synopsis": "Throughout time, supernatural, shapeshifting tanuki loved playing tricks on humankind. One plucky tanuki, Mameda, is no different. But there's one big problem. She wasn’t born in the days of yore — she was born in modern, more cynical times! How can she fulfill her mischievous tanuki destiny when supernatural hijinks are a thing of the past? She finds an angle when she meets Bunko, a master of the Japanese art of rakugo, which uses storytelling to beguile its audience. Mameda is determined to use rakugo to cast a spell on humanity, but first this tanuki trickster must convince the no-nonsense Bunko to take her on as an apprentice.",
+      "img": "img/uchi_no_shishou_wa_shippo_ga_nai.jpg"
+    },
+    {
+      "id": 34,
+      "title": "C Danchi",
+      "studio": "Akatsuki",
+      "aired": "October 2, 2022",
+      "format": "TV",
+      "genre": ["horror"],
+      "synopsis": "Housing Complex C centers around Kimi, who lives in a small, low-cost housing complex located in the seaside town of Kurosaki where trouble seems to follow her wherever she goes, and horrific incidents begin to occur. Is an ancient evil stalking the residents of Housing Complex C?",
+      "img": "img/c_danchi.jpg"
+    },
+    {
+      "id": 35,
+      "title": "Yama no Susume: Next Summit",
+      "studio": "8-bit",
+      "aired": "October 5, 2022",
+      "format": "TV",
+      "genre": ["adventure", "comedy"],
+      "synopsis": "The fourth season of Yama no Susume. Aoi Yukimura’s fear of heights won’t hold her back in the next adaptation of Encouragement of Climb! Joined by fellow mountaineering enthusiasts, including the spirited Hinata Kuraue and the other climbers they’ve met on their journey to great heights, Aoi and friends tackle tough challenges and conquer new summits while they embark on adventures throughout the mountain ranges of Japan. Fans new to the franchise will get to know the world of Encouragement of Climb via a selection of compilation episodes that reintroduce fan-favorite characters and beloved moments from the series. Later episodes contain all-new stories that continue the tale of Aoi and her ambition to overcome her fears and achieve her dreams.",
+      "img": "img/yama_no_susume_next_summit.jpg"
+    },
+    {
+      "id": 36,
+      "title": "Seiken Densetsu: Legend of Mana - The Teardrop Crystal",
+      "studio": "Graphinica",
+      "aired": "October 8, 2022",
+      "format": "TV",
+      "genre": ["adventure", "fantasy"],
+      "synopsis": "Not far from the town of Domina lives Shiloh, a boy who keeps hearing a voice in his dreams about a mission he must fulfill. But what mission could he be needed for remains unknown. That all changes when he meets two Jumi, a race that’s hunted for their unique gemstones, as a sudden outbreak of attacks against the Jumi occurs. His dream, his quest, becomes clear—help the Jumi and their gemstones!",
+      "img": "img/seiken_densetsu_legend_of_mana_the_teardrop_crystal.jpg"
+    },
+    {
+      "id": 37,
+      "title": "Yowamushi Pedal: LIMIT BREAK",
+      "studio": "TMS Entertainment",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["comedy", "drama", "sports"],
+      "synopsis": "The fifth season of Yowamushi Pedal.",
+      "img": "img/yowamushi_pedal_limit_break.jpg"
+    },
+    {
+      "id": 38,
+      "title": "Muv-Luv Alternative 2nd Season",
+      "studio": "FLAGSHIP LINE, Graphinica, Yumeta Company",
+      "aired": "October 6, 2022",
+      "format": "TV",
+      "genre": ["action", "drama", "mecha"],
+      "synopsis": "The second season of Muv-Luv Alternative.",
+      "img": "img/muv_luv_alternative_2nd_season.jpg"
+    },
+    {
+      "id": 39,
+      "title": "IDOLiSH7: Third BEAT! Part 2",
+      "studio": "TROYCA",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["music"],
+      "synopsis": "The second cour of the third season of IDOLiSH7.",
+      "img": "img/idolish7_third_beat_part_2.jpg"
+    },
+    {
+      "id": 40,
+      "title": "Human Bug Daigaku",
+      "studio": "DLE",
+      "aired": "October 5, 2022",
+      "format": "TV",
+      "genre": ["comedy", "mystery"],
+      "synopsis": "Satake Hirofumi is a prisoner on death row for murdering his fiancée. He's also an \"Undeadman\" who has survived many desperate situations. For this, he has earned the interest of a research institution called \"Human Crazy University,\" which studies real-life miraculous phenomena and the people who become entangled in them. Now a subject of their research, Satake relates to them his memories of his immortal, yet unhappy, life. Why did he kill his fiancée? Soon enough, the truth sheds light on a much bigger conspiracy...",
+      "img": "img/human_bug_daigaku.jpg"
+    },
+    {
+      "id": 41,
+      "title": "VAZZROCK THE ANIMATION",
+      "studio": "PRA",
+      "aired": "October 4, 2022",
+      "format": "TV",
+      "genre": ["music"],
+      "synopsis": "Twelve dazzling talents decide to make the most daring music groups ever: VAZZY and ROCK DOWN. Through rivalry and friendship, these gems help each other get better in every way. Even with unique differences, they all share a common goal—to shine!",
+      "img": "img/vazzrock_the_animation.jpg"
+    },
+    {
+      "id": 42,
+      "title": "Megaton-kyuu Musashi Season 2",
+      "studio": "OLM",
+      "aired": "-",
+      "format": "TV",
+      "genre": ["mecha"],
+      "synopsis": "The second season of Megaton-kyuu Musashi.",
+      "img": "img/megaton_kyuu_musashi_season_2.jpg"
+    }
+  ]
+}
