@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/anime_chart_fall_2022/static/css/main.31d6cfe0.css",
+    "main.js": "/anime_chart_fall_2022/static/js/main.c102f473.js",
+    "index.html": "/anime_chart_fall_2022/index.html",
+    "main.c102f473.js.map": "/anime_chart_fall_2022/static/js/main.c102f473.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.c102f473.js"
+  ]
+}
