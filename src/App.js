@@ -11,6 +11,7 @@ const ErrorMessage = styled.p`
 
 const App = () => {
   const [dataDb, setDataDb] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   const URL = 'https://douyaqki.github.io/anime_chart_fall_2022/chart.json'
 
@@ -25,6 +26,7 @@ const App = () => {
         if (response.ok) {
           const data = await response.json()
           setDataDb(data)
+          
           return
         }
 

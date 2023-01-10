@@ -1,5 +1,4 @@
 import React from 'react'
-import arkImg from './arknights_reimei_zensou.jpg'
 import '../CardImage.css'
 
 const CardImage = ({img, title, studio}) => {

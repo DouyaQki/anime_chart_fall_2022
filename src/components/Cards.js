@@ -5,8 +5,13 @@ import CardImage from './CardImage'
 const Cards = ({ dataDb }) => {
   return (
     <div className='card'>
+      {/* 
+      Tuve problemas al actualizar la web porque se me rompía toda
+      porque decía que dataDb no tenía nada, así que se solucionó
+      con el optional chaining: dataDb?.map...
+       */}
       {
-      dataDb.map(({ id, title, studio, aired, genre, synopsis, img }) => {
+      dataDb?.map(({ id, title, studio, aired, genre, synopsis, img }) => {
         return (
           <article key={id} className='grid-container'>
             {/* caja 1 */}

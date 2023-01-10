@@ -10,6 +10,8 @@
 }
 
 .card-img-details-container {
+  display: flex;
+  flex-direction: column;
   padding: .5rem;
   position: absolute;
   bottom: 0;
