@@ -10,14 +10,10 @@ html {
   margin: 0;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #edf1f5;
-}
-
 input {
   font: inherit;
+}
+
+img {
+  display: block;
 }

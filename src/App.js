@@ -1,29 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import './App.css'
-import randomImg from './assets/img/arknights_reimei_zensou.jpg'
+import Cards from './components/Cards'
+import ErrorData from './components/ErrorData'
+
+
+const ErrorMessage = styled.p`
+  color: #93204b;
+`
 
 const App = () => {
+  const [dataDb, setDataDb] = useState(null)
 
-  const URL = "https://douyaqki.github.io/anime_chart_fall_2022_js/chart.json"
-  
-  const getData = async (url) => {
-    try {
-      const response = await fetch(url)
+  const URL = 'https://douyaqki.github.io/anime_chart_fall_2022/chart.json'
 
-      if(response.ok) {
-        const data = await response.json()
-        return data
+  useEffect(() => {
+    const controller = new AbortController()
+    const signal = controller.signal
+
+    const getData = async (url) => {
+      try {
+        const response = await fetch(url, { signal })
+
+        if (response.ok) {
+          const data = await response.json()
+          setDataDb(data)
+          return
+        }
+
+        setDataDb(null)
+        throw Error('something happened')
+      } catch (error) {
+        console.log(error)
+        console.log(signal.aborted)
       }
-
-      throw Error('something happened')
-    } catch (error) {
-      console.log(error)
     }
-  }
 
-  getData(URL)
-    .then(res => console.log(res))
+    getData(URL)
 
+    return () => controller.abort()
+  }, [])
 
   return (
     <div>
@@ -31,7 +47,9 @@ const App = () => {
 
       <h2>TV</h2>
       <main>
-        <img src={randomImg} alt='arknights' height="300px" />
+        {/* ErrorData tiene styled components */}
+        <ErrorData />
+        <Cards dataDb={dataDb?.fall_2022} />
       </main>
     </div>
   )

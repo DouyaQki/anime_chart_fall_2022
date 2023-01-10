@@ -1,0 +1,34 @@
+/** PARA PODER HACERLE PADDING A LA TARJETA, SI NO, SE ROMPE TODO  */
+.card {
+  padding: 0.5rem;
+  /* background-color: cornflowerblue; */
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+  height: 15rem;
+  background-color: #fafcfc;
+}
+
+.date-synopsis-and-tags-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.date-and-synopsis {
+  color: #5c728a;
+}
+
+.genre-tags {
+  display: inline;
+  background-color: #eff7fb;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #5c728a;
+}
