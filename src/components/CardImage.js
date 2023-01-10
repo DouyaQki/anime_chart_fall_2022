@@ -5,7 +5,7 @@ import '../CardImage.css'
 const CardImage = ({img, title, studio}) => {
   return (
     <div className='image-container'>
-      <img className='card-img' src="" alt="" />
+      <img className='card-img' src={arkImg} alt="" />
 
       <div className='card-img-details-container'>
         <p className='card-title'>title</p>
