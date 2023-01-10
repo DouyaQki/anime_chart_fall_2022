@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/anime_chart_fall_2022/static/css/main.3b0c6d95.css",
-    "main.js": "/anime_chart_fall_2022/static/js/main.22dc4a93.js",
-    "static/media/arknights_reimei_zensou.jpg": "/anime_chart_fall_2022/static/media/arknights_reimei_zensou.585925c6bec7e8297527.jpg",
+    "main.css": "/anime_chart_fall_2022/static/css/main.9368d2d1.css",
+    "main.js": "/anime_chart_fall_2022/static/js/main.e0ea9d96.js",
     "index.html": "/anime_chart_fall_2022/index.html",
-    "main.3b0c6d95.css.map": "/anime_chart_fall_2022/static/css/main.3b0c6d95.css.map",
-    "main.22dc4a93.js.map": "/anime_chart_fall_2022/static/js/main.22dc4a93.js.map"
+    "main.9368d2d1.css.map": "/anime_chart_fall_2022/static/css/main.9368d2d1.css.map",
+    "main.e0ea9d96.js.map": "/anime_chart_fall_2022/static/js/main.e0ea9d96.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b0c6d95.css",
-    "static/js/main.22dc4a93.js"
+    "static/css/main.9368d2d1.css",
+    "static/js/main.e0ea9d96.js"
   ]
 }
