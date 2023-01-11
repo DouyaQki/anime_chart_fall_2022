@@ -9,16 +9,23 @@ const CardImage = ({ img, title, studio }) => {
     e.target.src = img
   }
 
+  /*
+  Aparentemente cuando cargas una imagen con onLoad,
+  hay que quitar el loading='lazy', si no, la consola
+  tira este mensaje:
+  "Images loaded lazily and replaced with placeholders."
+   */
+
   return (
     <div className='image-container'>
       <img
         className='card-img'
         src={imgLoading}
         alt=''
-        loading='lazy'
+        // loading='lazy'
         onLoad={handleImageLoad}
         height='240'
-        width='160'
+        width='auto'
       />
 
       <div className='card-img-details-container'>
