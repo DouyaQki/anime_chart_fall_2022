@@ -52,11 +52,12 @@ const App = () => {
   return (
     <div>
       <input type='search' className='search' placeholder='Filter anime' />
-      <ErrorData />
+      
+      {/* ErrorData tiene styled components */}
+      {dataDb === null && <ErrorData />}
 
       <main>
         <h2>TV</h2>
-        {/* ErrorData tiene styled components */}
         <Cards dataDb={dataDb?.fall_2022} />
       </main>
     </div>
