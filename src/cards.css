@@ -1,34 +1,57 @@
+:root {
+  --card-col2-color: #5c728a;
+}
+
 /** PARA PODER HACERLE PADDING A LA TARJETA, SI NO, SE ROMPE TODO  */
 .card {
-  padding: 0.5rem;
-  /* background-color: cornflowerblue; */
+  /* padding: 0.5rem; */
 }
 
 .grid-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   height: 15rem;
+  margin: 1rem 0;
   background-color: #fafcfc;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 10px #0000002c;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    'keyart details'
+    'keyart details'
+    'keyart genres';
 }
 
-.date-synopsis-and-tags-container {
+.aired-and-synopsis-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 10rem;
-  width: 100%;
+  grid-area: details;
+  overflow-y: scroll;
   height: 100%;
-  z-index: 999;
+}
+.aired-and-synopsis-container::-webkit-scrollbar {
+  width: 12px;
 }
 
-.date-and-synopsis {
-  color: #5c728a;
+.aired {
+  color: var(--card-col2-color);
+}
+
+.synopsis {
+  font-size: 0.7rem;
+  color: var(--card-col2-color);
 }
 
 .genre-tags {
+  grid-area: genres;
   display: flex;
-  gap: .5rem;
-  background-color: #eff7fb;
+  align-self: end;
+  gap: 0.5rem;
+  height: 2rem;
   padding: 0.5rem;
-  color: #5c728a;
+  background-color: #eff7fb;
+  color: var(--card-col2-color);
+  border-bottom-right-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
 }

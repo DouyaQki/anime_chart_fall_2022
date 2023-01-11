@@ -1,12 +1,12 @@
 .search {
   border: none;
-  border-radius: .2rem;
   outline-color: #80808080;
-  padding: 1rem 1rem 1rem 1rem;
-  margin: 1rem;
-  width: 90vw;
-  color: gray;
+  padding: .4rem;
+  width: 100%;
+  color: #808080;
   display: flex;
+  border: solid 1px gray;
+  border-radius: .2rem;
 }
 
 .search:focus {

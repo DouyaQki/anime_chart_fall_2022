@@ -4,7 +4,7 @@ import '../CardImage.css'
 const CardImage = ({img, title, studio}) => {
   return (
     <div className='image-container'>
-      <img className='card-img' src={img} alt={img} />
+      <img className='card-img' src={img} alt={img} loading='lazy' />
 
       <div className='card-img-details-container'>
         <span className='card-title'>{title}</span>

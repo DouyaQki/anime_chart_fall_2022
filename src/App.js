@@ -4,7 +4,6 @@ import './App.css'
 import Cards from './components/Cards'
 import ErrorData from './components/ErrorData'
 
-
 const ErrorMessage = styled.p`
   color: #93204b;
 `
@@ -25,8 +24,15 @@ const App = () => {
 
         if (response.ok) {
           const data = await response.json()
+          // since the data is unsorted i had to.
+          data?.fall_2022.sort((a, b) => {
+            if (a.title < b.title) return -1
+            if (a.title > b.title) return 1
+            return 0
+          })
+
           setDataDb(data)
-          
+
           return
         }
 
@@ -46,11 +52,11 @@ const App = () => {
   return (
     <div>
       <input type='search' className='search' placeholder='Filter anime' />
+      <ErrorData />
 
-      <h2>TV</h2>
       <main>
+        <h2>TV</h2>
         {/* ErrorData tiene styled components */}
-        <ErrorData />
         <Cards dataDb={dataDb?.fall_2022} />
       </main>
     </div>
