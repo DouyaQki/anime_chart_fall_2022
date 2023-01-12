@@ -18,7 +18,7 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
   const synopsisFirstHalf = synopsis.slice(0, 130)
   const synopsisSecondHalf = synopsis.slice(130)
 
-  const textTooLong = synopsis.length >= 130 ? '...' : ''
+  const textTooLong = ( (synopsis.length >= 130) && (textVisible?.opacity ?? 0)) ? '' : '...'
 
   const handlerOnMouseOver = () => {
     setTextVisible({
