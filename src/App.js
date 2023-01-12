@@ -49,7 +49,7 @@ const App = () => {
 
     return () => controller.abort()
   }, [])
-
+  
   return (
     <div>
       <input type='search' className='search' placeholder='Filter anime' />

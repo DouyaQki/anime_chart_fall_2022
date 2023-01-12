@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../cards.css'
 import CardImage from './CardImage'
 
@@ -15,6 +15,9 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
   const [textVisible, setTextVisible] = useState(spanStyleInitialState)
   const [textOverflow, setTextOverflow] = useState(textOverflowInitialState)
 
+  //* USEREF -------------------------->
+  const scrollRef = useRef(null)
+
   const synopsisFirstHalf = synopsis.slice(0, 130)
   const synopsisSecondHalf = synopsis.slice(130)
 
@@ -29,6 +32,8 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
     setTextOverflow({
       overflowY: 'scroll',
     })
+    
+    
   }
 
   const handlerOnMouseLeave = () => {
@@ -38,6 +43,8 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
     })
 
     setTextOverflow(textOverflowInitialState)
+
+    scrollRef.current.scrollTop = 0
   }
 
   return (
@@ -54,7 +61,7 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
         studio={studio} />
 
       {/* BOX 2 DATE AND SYNOPSIS */}
-      <section style={textOverflow} className='aired-and-synopsis-container'>
+      <section style={textOverflow} className='aired-and-synopsis-container' ref={scrollRef}>
         <h3 className='aired'>{aired}</h3>
         <p className='synopsis'>
           {`${synopsisFirstHalf}${textTooLong}`}

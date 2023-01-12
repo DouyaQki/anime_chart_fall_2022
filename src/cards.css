@@ -39,6 +39,7 @@
   grid-area: details;
   overflow-y: scroll;
   height: 100%;
+  scroll-behavior: smooth;
 }
 .aired-and-synopsis-container::-webkit-scrollbar {
   width: 12px;
@@ -51,14 +52,10 @@
   transition: opacity 500ms ease;
 }
 
-.aired {
-  padding-top: 0.5rem;
-}
-
 .aired,
 .synopsis {
   color: var(--card-col2-color);
-  padding-left: 0.5rem;
+  padding: 0.5rem;
 }
 
 .genre-tags {
