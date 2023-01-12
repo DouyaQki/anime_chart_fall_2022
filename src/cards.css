@@ -26,6 +26,11 @@
     'keyart details'
     'keyart details'
     'keyart genres';
+  transition: box-shadow 500ms ease;
+}
+
+.grid-container:hover {
+  box-shadow: 0 0 12px #0000009c;
 }
 
 .aired-and-synopsis-container {
@@ -39,20 +44,21 @@
   width: 12px;
 }
 
-.invisible {
-  background-color: red;
-}
-
-.aired {
-  color: var(--card-col2-color);
-}
-
 .synopsis {
   font-size: 0.7rem;
-  color: var(--card-col2-color);
   height: 100%;
   opacity: 1;
   transition: opacity 500ms ease;
+}
+
+.aired {
+  padding-top: 0.5rem;
+}
+
+.aired,
+.synopsis {
+  color: var(--card-col2-color);
+  padding-left: 0.5rem;
 }
 
 .genre-tags {

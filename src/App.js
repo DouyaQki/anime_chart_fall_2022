@@ -40,7 +40,8 @@ const App = () => {
         throw Error('something happened')
       } catch (error) {
         console.log(error)
-        console.log(signal.aborted)
+        controller.abort()
+        console.log(`aborted? ${signal.aborted}`)
       }
     }
 
@@ -52,13 +53,27 @@ const App = () => {
   return (
     <div>
       <input type='search' className='search' placeholder='Filter anime' />
-      
+
       {/* ErrorData tiene styled components */}
       {dataDb === null && <ErrorData />}
 
       <main>
         <h2>TV</h2>
-        <Cards dataDb={dataDb?.fall_2022} />
+        <div className='card'>
+          {dataDb?.fall_2022?.map(
+            ({ id, title, studio, aired, genre, synopsis, img }) => (
+              <Cards
+                key={id}
+                title={title}
+                studio={studio}
+                aired={aired}
+                genre={genre}
+                synopsis={synopsis}
+                img={img}
+              />
+            )
+          )}
+        </div>
       </main>
     </div>
   )
