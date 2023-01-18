@@ -18,6 +18,8 @@
   height: 15rem;
   margin: 1rem 0;
   background-color: #fafcfc;
+  /** color para tarjetas con follow  */
+  /* background-color: #91eea880; */
   border-radius: 0.2rem;
   box-shadow: 0 0 10px #0000002c;
   grid-template-columns: auto 1fr;

@@ -7,7 +7,6 @@ let LOADING_STYLE_DEFAULT = { display: 'absolute' }
 
 const App = () => {
   const [dataDb, setDataDb] = useState(null)
-  const [newDataDb, setNewDataDb] = useState(null)
 
   const [isLoadingStyle, setIsLoadingStyle] = useState(LOADING_STYLE_DEFAULT)
   const [dataDbError, setDataDbError] = useState(false)
@@ -20,7 +19,6 @@ const App = () => {
 
     setInputSearch(value)
   }
-
 
   //* GETTING API ------------------------------------------------------->
 
@@ -45,7 +43,6 @@ const App = () => {
 
           setIsLoadingStyle({ display: 'none' })
           setDataDb(data)
-          setNewDataDb(data)
           setDataDbError(false)
           return
         }
@@ -54,7 +51,6 @@ const App = () => {
         setIsLoadingStyle({ display: 'none' })
 
         setDataDb(null)
-        setNewDataDb(null)
         throw Error('something happened')
       } catch (error) {
         console.log('An error occurred')
@@ -98,21 +94,21 @@ const App = () => {
   )
 
   //* FILTERED DATADB ------------------------------------------------------------------->
-  useEffect(() => {
     // El loop se generaba porque newDataDb en el useEffect
     // tiene que hacerlo con el valor previo
     // si se añade al array de re-render.
-    if (dataDb && inputSearch.length >= 1) {
-      const dataDblowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
-      const dataDbRegExp = new RegExp(`^${dataDblowerCaseTitles}`)
 
-      setNewDataDb({
-        fall_2022: dataDb.fall_2022.filter((el) =>
-          dataDbRegExp.test(el.title.toLocaleLowerCase())
-        ),
-      })
-    }
-  }, [dataDb, inputSearch])
+  const dataDbLowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
+  const dataDbRegExp = new RegExp(`^${dataDbLowerCaseTitles}`)
+
+  //* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
+
+  const dataMappedOrFilteredData = dataDb
+  ? inputSearch.length >= 1
+    ? dataDb?.fall_2022?.filter(({title}) =>
+      dataDbRegExp.test(title.toLocaleLowerCase())).map(mapDataDbCallBack)
+      : dataDb?.fall_2022?.map(mapDataDbCallBack)
+  : null
 
   return (
     <div>
@@ -136,13 +132,8 @@ const App = () => {
 
       <main>
         {dataDb && <h2>TV</h2>}
-
         <div className='card'>
-          {dataDb
-            ? inputSearch.length >= 1
-              ? newDataDb?.fall_2022?.map(mapDataDbCallBack)
-              : dataDb?.fall_2022?.map(mapDataDbCallBack)
-            : null}
+          {dataMappedOrFilteredData}
         </div>
       </main>
     </div>
