@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
 import './App.css'
 import Cards from './components/Cards'
 import ErrorData from './components/ErrorData'
 
-const ErrorMessage = styled.p`
-  color: #93204b;
-`
+let LOADING_STYLE_DEFAULT = { display: 'absolute' }
 
 const App = () => {
   const [dataDb, setDataDb] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [newDataDb, setNewDataDb] = useState(null)
+
+  const [isLoadingStyle, setIsLoadingStyle] = useState(LOADING_STYLE_DEFAULT)
+  const [dataDbError, setDataDbError] = useState(false)
+  const [inputSearch, setInputSearch] = useState('')
+
+  //* INPUT SEARCH ------------------------------------------------------->
+
+  const handleChange = (e) => {
+    const { value } = e.target
+
+    setInputSearch(value)
+  }
+
+
+  //* GETTING API ------------------------------------------------------->
 
   const URL = 'https://douyaqki.github.io/anime_chart_fall_2022/chart.json'
 
@@ -31,15 +43,21 @@ const App = () => {
             return 0
           })
 
+          setIsLoadingStyle({ display: 'none' })
           setDataDb(data)
-
+          setNewDataDb(data)
+          setDataDbError(false)
           return
         }
 
+        setDataDbError(true)
+        setIsLoadingStyle({ display: 'none' })
+
         setDataDb(null)
+        setNewDataDb(null)
         throw Error('something happened')
       } catch (error) {
-        console.log(error)
+        console.log('An error occurred')
         controller.abort()
         console.log(`aborted? ${signal.aborted}`)
       }
@@ -49,30 +67,82 @@ const App = () => {
 
     return () => controller.abort()
   }, [])
-  
+
+  //* LOADING animation ------------------------------------------------------------------->
+  useEffect(() => {
+    if (dataDbError) {
+      setIsLoadingStyle({ display: 'none' })
+    }
+  }, [dataDb, dataDbError])
+
+  //* MAP CARDS CALLBACK ------------------------------------------------------------------->
+
+  const mapDataDbCallBack = ({
+    id,
+    title,
+    studio,
+    aired,
+    genre,
+    synopsis,
+    img,
+  }) => (
+    <Cards
+      key={id}
+      title={title}
+      studio={studio}
+      aired={aired}
+      genre={genre}
+      synopsis={synopsis}
+      img={img}
+    />
+  )
+
+  //* FILTERED DATADB ------------------------------------------------------------------->
+  useEffect(() => {
+    // El loop se generaba porque newDataDb en el useEffect
+    // tiene que hacerlo con el valor previo
+    // si se añade al array de re-render.
+    if (dataDb && inputSearch.length >= 1) {
+      const dataDblowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
+      const dataDbRegExp = new RegExp(`^${dataDblowerCaseTitles}`)
+
+      setNewDataDb({
+        fall_2022: dataDb.fall_2022.filter((el) =>
+          dataDbRegExp.test(el.title.toLocaleLowerCase())
+        ),
+      })
+    }
+  }, [dataDb, inputSearch])
+
   return (
     <div>
-      <input type='search' className='search' placeholder='Filter anime' />
+      <div style={isLoadingStyle} className='loading-box'>
+        <div className='loading'>
+          <p>Loading</p>
+        </div>
+      </div>
+
+      <input
+        type='search'
+        className='search'
+        placeholder='Filter anime'
+        value={inputSearch.input}
+        onChange={handleChange}
+        disabled={dataDbError}
+      />
 
       {/* ErrorData tiene styled components */}
-      {dataDb === null && <ErrorData />}
+      {dataDbError && <ErrorData />}
 
       <main>
-        <h2>TV</h2>
+        {dataDb && <h2>TV</h2>}
+
         <div className='card'>
-          {dataDb?.fall_2022?.map(
-            ({ id, title, studio, aired, genre, synopsis, img }) => (
-              <Cards
-                key={id}
-                title={title}
-                studio={studio}
-                aired={aired}
-                genre={genre}
-                synopsis={synopsis}
-                img={img}
-              />
-            )
-          )}
+          {dataDb
+            ? inputSearch.length >= 1
+              ? newDataDb?.fall_2022?.map(mapDataDbCallBack)
+              : dataDb?.fall_2022?.map(mapDataDbCallBack)
+            : null}
         </div>
       </main>
     </div>

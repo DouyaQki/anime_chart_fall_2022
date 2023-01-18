@@ -15,13 +15,14 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
   const [textVisible, setTextVisible] = useState(spanStyleInitialState)
   const [textOverflow, setTextOverflow] = useState(textOverflowInitialState)
 
-  //* USEREF -------------------------->
+  //* USEREF ----------------------------------------------------------------->
   const scrollRef = useRef(null)
 
   const synopsisFirstHalf = synopsis.slice(0, 130)
   const synopsisSecondHalf = synopsis.slice(130)
 
-  const textTooLong = ( (synopsis.length >= 130) && (textVisible?.opacity ?? 0)) ? '' : '...'
+  const textTooLong =
+    synopsis.length >= 130 && (textVisible?.opacity ?? 0) ? '' : '...'
 
   const handlerOnMouseOver = () => {
     setTextVisible({
@@ -32,8 +33,6 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
     setTextOverflow({
       overflowY: 'scroll',
     })
-    
-    
   }
 
   const handlerOnMouseLeave = () => {
@@ -55,13 +54,14 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
       onMouseLeave={handlerOnMouseLeave}
     >
       {/* BOX 1 IMAGE */}
-      <CardImage
-        img={img}
-        title={title}
-        studio={studio} />
+      <CardImage img={img} title={title} studio={studio} />
 
       {/* BOX 2 DATE AND SYNOPSIS */}
-      <section style={textOverflow} className='aired-and-synopsis-container' ref={scrollRef}>
+      <section
+        style={textOverflow}
+        className='aired-and-synopsis-container'
+        ref={scrollRef}
+      >
         <h3 className='aired'>{aired}</h3>
         <p className='synopsis'>
           {`${synopsisFirstHalf}${textTooLong}`}
