@@ -7,6 +7,7 @@ const CardImage = ({ img, title, studio, setImgOnError }) => {
 
   const handleImageLoad = (e) => {
     e.target.src = img
+    e.target.style.width = 'auto'
     setImgOnError('grid')
   }
 
@@ -31,7 +32,7 @@ const CardImage = ({ img, title, studio, setImgOnError }) => {
         onLoad={handleImageLoad}
         onError={handleImageError}
         height='240'
-        width='auto'
+        width='170'
       />
 
       <div className='card-img-details-container'>

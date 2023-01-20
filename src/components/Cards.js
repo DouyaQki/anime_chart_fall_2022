@@ -17,7 +17,7 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
 
   //* When onError images trigger. ---------------------------->
   const [imgOnError, setImgOnError] = useState('grid')
-  const cardsDisplay = {display: imgOnError}
+  const cardsDisplay = { display: imgOnError }
 
   //* USEREF ----------------------------------------------------------------->
   const scrollRef = useRef(null)
@@ -59,7 +59,12 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
       onMouseLeave={handlerOnMouseLeave}
     >
       {/* BOX 1 IMAGE */}
-      <CardImage setImgOnError={setImgOnError} img={img} title={title} studio={studio} />
+      <CardImage
+        setImgOnError={setImgOnError}
+        img={img}
+        title={title}
+        studio={studio}
+      />
 
       {/* BOX 2 DATE AND SYNOPSIS */}
       <section

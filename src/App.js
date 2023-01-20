@@ -94,9 +94,9 @@ const App = () => {
   )
 
   //* FILTERED DATADB ------------------------------------------------------------------->
-    // El loop se generaba porque newDataDb en el useEffect
-    // tiene que hacerlo con el valor previo
-    // si se añade al array de re-render.
+  // El loop se generaba porque newDataDb en el useEffect
+  // tiene que hacerlo con el valor previo
+  // si se añade al array de re-render.
 
   const dataDbLowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
   const dataDbRegExp = new RegExp(`^${dataDbLowerCaseTitles}`)
@@ -104,11 +104,12 @@ const App = () => {
   //* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
 
   const dataMappedOrFilteredData = dataDb
-  ? inputSearch.length >= 1
-    ? dataDb?.fall_2022?.filter(({title}) =>
-      dataDbRegExp.test(title.toLocaleLowerCase())).map(mapDataDbCallBack)
+    ? inputSearch.length >= 1
+      ? dataDb?.fall_2022
+          ?.filter(({ title }) => dataDbRegExp.test(title.toLocaleLowerCase()))
+          .map(mapDataDbCallBack)
       : dataDb?.fall_2022?.map(mapDataDbCallBack)
-  : null
+    : null
 
   return (
     <div>
