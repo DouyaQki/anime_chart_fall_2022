@@ -133,6 +133,7 @@ const App = () => {
       <main>
         {dataDb && <h2>TV</h2>}
         <div className='card'>
+          {/* If user searches something, the filtered dataDb is displayed. */}
           {dataMappedOrFilteredData}
         </div>
       </main>

@@ -1,12 +1,17 @@
 import React from 'react'
 import '../CardImage.css'
 
-const CardImage = ({ img, title, studio }) => {
+const CardImage = ({ img, title, studio, setImgOnError }) => {
   const imgLoading =
     'https://douyaqki.github.io/anime_chart_fall_2022/img/img_loading.png'
 
   const handleImageLoad = (e) => {
     e.target.src = img
+    setImgOnError('grid')
+  }
+
+  const handleImageError = (e) => {
+    setImgOnError('none')
   }
 
   /*
@@ -24,6 +29,7 @@ const CardImage = ({ img, title, studio }) => {
         alt=''
         // loading='lazy'
         onLoad={handleImageLoad}
+        onError={handleImageError}
         height='240'
         width='auto'
       />

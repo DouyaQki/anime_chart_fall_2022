@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '../cards.css'
 import CardImage from './CardImage'
 
@@ -14,6 +14,10 @@ const textOverflowInitialState = {
 const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
   const [textVisible, setTextVisible] = useState(spanStyleInitialState)
   const [textOverflow, setTextOverflow] = useState(textOverflowInitialState)
+
+  //* When onError images trigger. ---------------------------->
+  const [imgOnError, setImgOnError] = useState('grid')
+  const cardsDisplay = {display: imgOnError}
 
   //* USEREF ----------------------------------------------------------------->
   const scrollRef = useRef(null)
@@ -48,13 +52,14 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
 
   return (
     <article
+      style={cardsDisplay}
       key={id}
       className='grid-container'
       onMouseEnter={handlerOnMouseOver}
       onMouseLeave={handlerOnMouseLeave}
     >
       {/* BOX 1 IMAGE */}
-      <CardImage img={img} title={title} studio={studio} />
+      <CardImage setImgOnError={setImgOnError} img={img} title={title} studio={studio} />
 
       {/* BOX 2 DATE AND SYNOPSIS */}
       <section
