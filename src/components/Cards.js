@@ -1,6 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
+import { reactLocalStorage } from 'reactjs-localstorage'
 import '../cards.css'
 import CardImage from './CardImage'
+import addFavorite from '../assets/favorite_add.png'
+import removeFavorite from '../assets/favorite_close.png'
+// localStorage variable
+import { LOCAL_DATA } from '../App'
 
 const spanStyleInitialState = {
   opacity: 0,
@@ -11,9 +16,22 @@ const textOverflowInitialState = {
   overflowY: 'hidden',
 }
 
-const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
+const Cards = ({
+  id,
+  idShow,
+  title,
+  studio,
+  aired,
+  genre,
+  synopsis,
+  img,
+  follow,
+  dataDb,
+  setDataDb,
+}) => {
   const [textVisible, setTextVisible] = useState(spanStyleInitialState)
   const [textOverflow, setTextOverflow] = useState(textOverflowInitialState)
+  const [, setBtnFavorite] = useState(false)
 
   //* When onError images trigger. ---------------------------->
   const [imgOnError, setImgOnError] = useState('grid')
@@ -50,6 +68,52 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
     scrollRef.current.scrollTop = 0
   }
 
+  const handleClickFavorite = (e) => {
+    if (e.target.src === addFavorite) {
+      e.target.src = removeFavorite
+      setBtnFavorite(false)
+      // REVISAR. YA ENCUENTRA EL INDICE
+      // FALTA MANDAR AL APP UNA COPIA
+      // CON EL FOLLOW EN TRUE/FALSE
+      const showFollowedIdx = dataDb?.fall_2022?.findIndex(
+        (el) => el.id === idShow
+      )
+
+      const dataDbFollowCopy = { fall_2022: [...dataDb?.fall_2022] }
+
+      dataDbFollowCopy.fall_2022[showFollowedIdx].follow = true
+
+      if (dataDb) setDataDb(dataDbFollowCopy)
+
+      //* it updates the variable in localStorage ------------------------->
+      reactLocalStorage.setObject(LOCAL_DATA, dataDb)
+
+      return
+    }
+
+    if (e.target.src === removeFavorite) {
+      e.target.src = addFavorite
+      setBtnFavorite(true)
+
+      const showFollowedIdx = dataDb?.fall_2022?.findIndex(
+        (el) => el.id === idShow
+      )
+
+      const dataDbFollowCopy = { fall_2022: [...dataDb?.fall_2022] }
+
+      dataDbFollowCopy.fall_2022[showFollowedIdx].follow = false
+
+      if (dataDb) setDataDb(dataDbFollowCopy)
+
+      //* it updates the variable in localStorage ------------------------->
+      reactLocalStorage.setObject(LOCAL_DATA, dataDb)
+
+      return
+    }
+  }
+
+  const btnStyle = follow ? removeFavorite : addFavorite
+
   return (
     <article
       style={cardsDisplay}
@@ -84,6 +148,10 @@ const Cards = ({ id, title, studio, aired, genre, synopsis, img }) => {
         {genre.map((el, idx) => (
           <p key={idx}>{el}</p>
         ))}
+
+        <div className='favorite-box' onClick={handleClickFavorite}>
+          <img className='favorite-img' src={btnStyle} alt='#' />
+        </div>
       </div>
     </article>
   )

@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import { reactLocalStorage } from 'reactjs-localstorage'
 import './App.css'
 import Cards from './components/Cards'
 import ErrorData from './components/ErrorData'
 
-let LOADING_STYLE_DEFAULT = { display: 'absolute' }
+// This is for localStore purposes.
+export const LOCAL_DATA = 'localData'
 
+// let LOADING_STYLE_DEFAULT = { display: 'absolute' }
+// parapoder  chequear el localStorage
+let LOADING_STYLE_DEFAULT = { display: 'none' }
+
+//* COMPONENT ------------------------------------------------------->
 const App = () => {
   const [dataDb, setDataDb] = useState(null)
 
@@ -12,6 +19,19 @@ const App = () => {
   const [dataDbError, setDataDbError] = useState(false)
   const [inputSearch, setInputSearch] = useState('')
 
+  //* LOCALSTORAGE ------------------------------------------------------->
+
+  useEffect(() => {
+    const thereIsNoLocalData =
+      !reactLocalStorage.getObject(LOCAL_DATA)?.fall_2022
+
+    if (thereIsNoLocalData && dataDb) {
+      reactLocalStorage.setObject(LOCAL_DATA, dataDb)
+      return
+    }
+
+    // SI EXISTE, CARGA EL LOCAL DATA
+  }, [dataDb])
   //* INPUT SEARCH ------------------------------------------------------->
 
   const handleChange = (e) => {
@@ -25,6 +45,8 @@ const App = () => {
   const URL = 'https://douyaqki.github.io/anime_chart_fall_2022/chart.json'
 
   useEffect(() => {
+    const thereIsLocalData = reactLocalStorage.getObject(LOCAL_DATA)?.fall_2022
+
     const controller = new AbortController()
     const signal = controller.signal
 
@@ -35,15 +57,17 @@ const App = () => {
         if (response.ok) {
           const data = await response.json()
           // since the data is unsorted i had to.
-          data?.fall_2022.sort((a, b) => {
+          const sortDataByName = (a, b) => {
             if (a.title < b.title) return -1
             if (a.title > b.title) return 1
             return 0
-          })
+          }
 
+          data?.fall_2022.sort(sortDataByName)
           setIsLoadingStyle({ display: 'none' })
           setDataDb(data)
           setDataDbError(false)
+
           return
         }
 
@@ -57,6 +81,12 @@ const App = () => {
         controller.abort()
         console.log(`aborted? ${signal.aborted}`)
       }
+    }
+
+    if (thereIsLocalData) {
+      console.log('There is data. Fetch is not needed.')
+      setDataDb(reactLocalStorage.getObject(LOCAL_DATA))
+      return
     }
 
     getData(URL)
@@ -81,15 +111,20 @@ const App = () => {
     genre,
     synopsis,
     img,
+    follow,
   }) => (
     <Cards
       key={id}
+      idShow={id}
       title={title}
       studio={studio}
       aired={aired}
       genre={genre}
       synopsis={synopsis}
       img={img}
+      follow={follow}
+      dataDb={dataDb}
+      setDataDb={setDataDb}
     />
   )
 
