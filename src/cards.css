@@ -19,7 +19,7 @@
   margin: 1rem 0;
   background-color: #fafcfc;
   /** color para tarjetas con follow  */
-  /* background-color: #91eea880; */
+  /* background-color: #91eea841; */
   border-radius: 0.2rem;
   box-shadow: 0 0 10px #0000002c;
   grid-template-columns: auto 1fr;
@@ -28,7 +28,7 @@
     'keyart details'
     'keyart details'
     'keyart genres';
-  transition: box-shadow 500ms ease;
+  transition: all 500ms ease;
 }
 
 .grid-container:hover {
@@ -66,14 +66,23 @@
   flex-wrap: wrap;
   align-self: center;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
-  min-height: 2rem;
   padding: 0.5rem;
+  width: 100%;
+  min-height: 2rem;
   background-color: #eff7fb;
   color: var(--card-col2-color);
   border-bottom-right-radius: 0.2rem;
   font-size: 0.8rem;
   font-weight: bold;
+}
+
+.tags-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  width: 100%;
 }
 
 .favorite-box {

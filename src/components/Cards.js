@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { reactLocalStorage } from 'reactjs-localstorage'
 import '../cards.css'
 import CardImage from './CardImage'
@@ -31,11 +31,16 @@ const Cards = ({
 }) => {
   const [textVisible, setTextVisible] = useState(spanStyleInitialState)
   const [textOverflow, setTextOverflow] = useState(textOverflowInitialState)
-  const [, setBtnFavorite] = useState(false)
+
+  const [btnFavorite, setBtnFavorite] = useState(follow)
 
   //* When onError images trigger. ---------------------------->
+  const cardColorStyle = follow ? '#91eea841' : '#fafcfc'
+
   const [imgOnError, setImgOnError] = useState('grid')
-  const cardsDisplay = { display: imgOnError }
+  const cardsDisplay = { display: imgOnError, backgroundColor: cardColorStyle }
+
+
 
   //* USEREF ----------------------------------------------------------------->
   const scrollRef = useRef(null)
@@ -145,10 +150,11 @@ const Cards = ({
 
       {/* BOX 3 GENRES */}
       <div className='genre-tags'>
-        {genre.map((el, idx) => (
-          <p key={idx}>{el}</p>
-        ))}
-
+        <div className='tags-box'>
+          {genre.map((el, idx) => (
+            <p key={idx}>{el}</p>
+          ))}
+        </div>
         <div className='favorite-box' onClick={handleClickFavorite}>
           <img className='favorite-img' src={btnStyle} alt='#' />
         </div>
