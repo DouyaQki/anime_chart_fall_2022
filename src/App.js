@@ -7,44 +7,34 @@ import ErrorData from './components/ErrorData'
 // This is for localStore purposes.
 export const LOCAL_DATA = 'localData'
 
-// let LOADING_STYLE_DEFAULT = { display: 'absolute' }
-// parapoder  chequear el localStorage
-let LOADING_STYLE_DEFAULT = { display: 'none' }
-
 //* COMPONENT ------------------------------------------------------->
 const App = () => {
   const [dataDb, setDataDb] = useState(null)
-
-  const [isLoadingStyle, setIsLoadingStyle] = useState(LOADING_STYLE_DEFAULT)
   const [dataDbError, setDataDbError] = useState(false)
+
+  //* INPUT SEARCH ------------------------------------------------------->
   const [inputSearch, setInputSearch] = useState('')
 
-  //* LOCALSTORAGE ------------------------------------------------------->
+  const handleChange = (e) => {
+    setInputSearch(e.target.value)
+  }
 
-  useEffect(() => {
+  //* LOCAL STORAGE ------------------------------------------------------->
+
+  const addDataToLocalStorage = () => {
     const thereIsNoLocalData =
       !reactLocalStorage.getObject(LOCAL_DATA)?.fall_2022
 
-    if (thereIsNoLocalData && dataDb) {
-      reactLocalStorage.setObject(LOCAL_DATA, dataDb)
-      return
-    }
+    // If there is an error, data isn't added to localStorage.
+    const firstTimeLoading = thereIsNoLocalData && dataDb && !dataDbError
 
-    // SI EXISTE, CARGA EL LOCAL DATA
-  }, [dataDb])
-  //* INPUT SEARCH ------------------------------------------------------->
-
-  const handleChange = (e) => {
-    const { value } = e.target
-
-    setInputSearch(value)
+    if (firstTimeLoading) reactLocalStorage.setObject(LOCAL_DATA, dataDb)
   }
 
-  //* GETTING API ------------------------------------------------------->
+  useEffect(addDataToLocalStorage, [dataDb, dataDbError])
 
-  const URL = 'https://douyaqki.github.io/anime_chart_fall_2022/chart.json'
-
-  useEffect(() => {
+  //* FETCH API ------------------------------------------------------->
+  const gettingAPI = () => {
     const thereIsLocalData = reactLocalStorage.getObject(LOCAL_DATA)?.fall_2022
 
     const controller = new AbortController()
@@ -56,7 +46,8 @@ const App = () => {
 
         if (response.ok) {
           const data = await response.json()
-          // since the data is unsorted i had to.
+
+          // since the json I created is unsorted, I had to.
           const sortDataByName = (a, b) => {
             if (a.title < b.title) return -1
             if (a.title > b.title) return 1
@@ -64,42 +55,39 @@ const App = () => {
           }
 
           data?.fall_2022.sort(sortDataByName)
-          setIsLoadingStyle({ display: 'none' })
-          setDataDb(data)
-          setDataDbError(false)
 
+          setDataDb(data)
+
+          if (thereIsLocalData) {
+            setDataDb(reactLocalStorage.getObject(LOCAL_DATA))
+          }
+
+          setDataDbError(false)
+          
           return
         }
 
         setDataDbError(true)
-        setIsLoadingStyle({ display: 'none' })
 
         setDataDb(null)
         throw Error('something happened')
-      } catch (error) {
+      }
+
+      catch (error) {
         console.log('An error occurred')
         controller.abort()
         console.log(`aborted? ${signal.aborted}`)
       }
     }
 
-    if (thereIsLocalData) {
-      console.log('There is data. Fetch is not needed.')
-      setDataDb(reactLocalStorage.getObject(LOCAL_DATA))
-      return
-    }
-
     getData(URL)
 
     return () => controller.abort()
-  }, [])
+  }
 
-  //* LOADING animation ------------------------------------------------------------------->
-  useEffect(() => {
-    if (dataDbError) {
-      setIsLoadingStyle({ display: 'none' })
-    }
-  }, [dataDb, dataDbError])
+  const URL = 'https://douyaqki.github.io/anime_chart_fall_2022/chart.json'
+
+  useEffect(gettingAPI, [])
 
   //* MAP CARDS CALLBACK ------------------------------------------------------------------->
 
@@ -129,14 +117,18 @@ const App = () => {
   )
 
   //* FILTERED DATADB ------------------------------------------------------------------->
-  // El loop se generaba porque newDataDb en el useEffect
-  // tiene que hacerlo con el valor previo
-  // si se añade al array de re-render.
-
   const dataDbLowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
   const dataDbRegExp = new RegExp(`^${dataDbLowerCaseTitles}`)
 
   //* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
+  /*
+    dataMappedOrFilteredData triggers a filtered data from the search input,
+    if it's empty, it displays the raw data.
+
+    ? The data could be a copy of the localStorage if it exists.
+
+    The search also should be disabled if data is null.
+  */
 
   const dataMappedOrFilteredData = dataDb
     ? inputSearch.length >= 1
@@ -148,12 +140,6 @@ const App = () => {
 
   return (
     <div>
-      <div style={isLoadingStyle} className='loading-box'>
-        <div className='loading'>
-          <p>Loading</p>
-        </div>
-      </div>
-
       <input
         type='search'
         className='search'
@@ -163,7 +149,7 @@ const App = () => {
         disabled={dataDbError}
       />
 
-      {/* ErrorData tiene styled components */}
+      {/* ErrorData is a styled components */}
       {dataDbError && <ErrorData />}
 
       <main>

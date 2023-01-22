@@ -36,12 +36,12 @@
 }
 
 .aired-and-synopsis-container {
+  grid-area: details;
   display: flex;
   flex-direction: column;
-  grid-area: details;
   overflow-y: scroll;
-  height: 100%;
   scroll-behavior: smooth;
+  height: auto;
 }
 .aired-and-synopsis-container::-webkit-scrollbar {
   width: 12px;
@@ -89,8 +89,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1rem;
-  height: 1rem;
+  height: 1.1rem;
   border: solid 1px var(--card-col2-color);
   border-radius: 1rem;
   cursor: pointer;

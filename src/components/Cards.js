@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { reactLocalStorage } from 'reactjs-localstorage'
+// CSS and resources.
 import '../cards.css'
 import CardImage from './CardImage'
 import addFavorite from '../assets/favorite_add.png'
 import removeFavorite from '../assets/favorite_close.png'
-// localStorage variable
+// localStorage variable.
 import { LOCAL_DATA } from '../App'
 
 const spanStyleInitialState = {
