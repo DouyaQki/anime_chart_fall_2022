@@ -12,7 +12,7 @@ const App = () => {
   const [dataDb, setDataDb] = useState(null)
   const [dataDbError, setDataDbError] = useState(false)
 
-  //* INPUT SEARCH ------------------------------------------------------->
+//* INPUT SEARCH ------------------------------------------------------->
   const [inputSearch, setInputSearch] = useState('')
 
   const handleChange = (e) => {
@@ -33,7 +33,7 @@ const App = () => {
 
   useEffect(addDataToLocalStorage, [dataDb, dataDbError])
 
-  //* FETCH API ------------------------------------------------------->
+//* FETCH API ------------------------------------------------------->
   const gettingAPI = () => {
     const thereIsLocalData = reactLocalStorage.getObject(LOCAL_DATA)?.fall_2022
 
@@ -89,7 +89,7 @@ const App = () => {
 
   useEffect(gettingAPI, [])
 
-  //* MAP CARDS CALLBACK ------------------------------------------------------------------->
+//* MAP CARDS CALLBACK ------------------------------------------------------------------->
 
   const mapDataDbCallBack = ({
     id,
@@ -116,18 +116,18 @@ const App = () => {
     />
   )
 
-  //* FILTERED DATADB ------------------------------------------------------------------->
+//* FILTERED DATADB ------------------------------------------------------------------->
   const dataDbLowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
   const dataDbRegExp = new RegExp(`^${dataDbLowerCaseTitles}`)
 
-  //* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
+//* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
   /*
-    dataMappedOrFilteredData triggers a filtered data from the search input,
+    dataMappedOrFilteredData triggers a filtered data from search input,
     if it's empty, it displays the raw data.
 
-    ? The data could be a copy of the localStorage if it exists.
+    ? The data could be a localStorage copy if it exists.
 
-    The search also should be disabled if data is null.
+    The searchbar should also be disabled if data is null.
   */
 
   const dataMappedOrFilteredData = dataDb
