@@ -79,24 +79,19 @@
   padding: .3rem .3rem .3rem 0;
 }
 
-.favorite-box {
-  display: flex;
-  justify-content: center;
-  height: 1.1rem;
-  border-bottom-right-radius: 0.2rem;
+.favorite-btn {
+  height: 1.2rem;
+  text-align: center;
+  width: 100%;
+  border: none;
   cursor: pointer;
   background-color: #80808041;
   transition: background-color 500ms ease;
 }
 
-.favorite-box:hover {
-  background-color: #6495ed80;
+.favorite-btn:hover {
+  /* background-color: #6495ed80; */
 }
-
-.favorite-img {
-  max-height: 100%;
-}
-
 
 @media (width >= 800px) {
   .card {

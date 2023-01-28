@@ -3,8 +3,6 @@ import { reactLocalStorage } from 'reactjs-localstorage'
 // CSS and resources.
 import '../cards.css'
 import CardImage from './CardImage'
-import addFavorite from '../assets/favorite_add.png'
-import removeFavorite from '../assets/favorite_close.png'
 // localStorage variable.
 import { LOCAL_DATA } from '../App'
 
@@ -33,13 +31,35 @@ const Cards = ({
   const [textVisible, setTextVisible] = useState(spanStyleInitialState)
   const [textOverflow, setTextOverflow] = useState(textOverflowInitialState)
 
-  const [btnFavorite, setBtnFavorite] = useState(follow)
+  const [btnText, setBtnText] = useState('+')
 
   //* When onError images trigger. ---------------------------->
   const cardColorStyle = follow ? '#91eea841' : '#fafcfc'
 
   const [imgOnError, setImgOnError] = useState('grid')
   const cardsDisplay = { display: imgOnError, backgroundColor: cardColorStyle }
+
+  //* ADD / REMOVE TO FAVORITE ----------------------------------------------->
+
+  const handleButtonEnter = (e) => {
+    let { textContent } = e.target
+    const FAVORITE_ADDED = '+'
+    const FAVORITE_REMOVED = '-'
+
+    if (textContent === FAVORITE_ADDED) {
+      e.target.style.backgroundColor = '#6495ed80'
+      return
+    }
+
+    if (textContent === FAVORITE_REMOVED) {
+      e.target.style.backgroundColor = '#ed646480'
+      return
+    }
+  }
+
+  const handleButtonLeave = (e) => {
+    e.target.style.backgroundColor = '#80808041'
+  }
 
   //* USEREF ----------------------------------------------------------------->
   const scrollRef = useRef(null)
@@ -73,12 +93,14 @@ const Cards = ({
   }
 
   const handleClickFavorite = (e) => {
-    if (e.target.src === addFavorite) {
-      e.target.src = removeFavorite
-      setBtnFavorite(false)
-      // REVISAR. YA ENCUENTRA EL INDICE
-      // FALTA MANDAR AL APP UNA COPIA
-      // CON EL FOLLOW EN TRUE/FALSE
+    const { textContent } = e.target
+    const FAVORITE_ADDED = '+'
+    const FAVORITE_REMOVED = '-'
+
+    if (textContent === FAVORITE_ADDED) {
+      console.log(FAVORITE_ADDED)
+      setBtnText(FAVORITE_REMOVED)
+
       const showFollowedIdx = dataDb?.fall_2022?.findIndex(
         (el) => el.id === idShow
       )
@@ -91,13 +113,10 @@ const Cards = ({
 
       //* it updates the variable in localStorage ------------------------->
       reactLocalStorage.setObject(LOCAL_DATA, dataDb)
-
-      return
     }
 
-    if (e.target.src === removeFavorite) {
-      e.target.src = addFavorite
-      setBtnFavorite(true)
+    if (textContent === FAVORITE_REMOVED) {
+      setBtnText(FAVORITE_ADDED)
 
       const showFollowedIdx = dataDb?.fall_2022?.findIndex(
         (el) => el.id === idShow
@@ -115,8 +134,6 @@ const Cards = ({
       return
     }
   }
-
-  const btnStyle = follow ? removeFavorite : addFavorite
 
   return (
     <article
@@ -156,9 +173,15 @@ const Cards = ({
             ))}
           </div>
 
-          <div className='favorite-box' onClick={handleClickFavorite}>
-            <img className='favorite-img' src={btnStyle} alt='#' />
-          </div>
+          <button
+            className='favorite-btn'
+            onClick={handleClickFavorite}
+            data-div_favorite='fav'
+            onMouseEnter={handleButtonEnter}
+            onMouseLeave={handleButtonLeave}
+          >
+            {btnText}
+          </button>
         </div>
       </article>
     </article>
