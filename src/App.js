@@ -12,7 +12,7 @@ const App = () => {
   const [dataDb, setDataDb] = useState(null)
   const [dataDbError, setDataDbError] = useState(false)
 
-//* INPUT SEARCH ------------------------------------------------------->
+  //* INPUT SEARCH ------------------------------------------------------->
   const [inputSearch, setInputSearch] = useState('')
 
   const handleChange = (e) => {
@@ -33,7 +33,7 @@ const App = () => {
 
   useEffect(addDataToLocalStorage, [dataDb, dataDbError])
 
-//* FETCH API ------------------------------------------------------->
+  //* FETCH API ------------------------------------------------------->
   const gettingAPI = () => {
     const thereIsLocalData = reactLocalStorage.getObject(LOCAL_DATA)?.fall_2022
 
@@ -63,17 +63,15 @@ const App = () => {
           }
 
           setDataDbError(false)
-          
+
           return
         }
 
         setDataDbError(true)
 
         setDataDb(null)
-        throw Error('something happened')
-      }
-
-      catch (error) {
+        throw new Error('something happened')
+      } catch (error) {
         console.log('An error occurred')
         controller.abort()
         console.log(`aborted? ${signal.aborted}`)
@@ -89,7 +87,7 @@ const App = () => {
 
   useEffect(gettingAPI, [])
 
-//* MAP CARDS CALLBACK ------------------------------------------------------------------->
+  //* MAP CARDS CALLBACK ------------------------------------------------------------------->
 
   const mapDataDbCallBack = ({
     id,
@@ -116,11 +114,11 @@ const App = () => {
     />
   )
 
-//* FILTERED DATADB ------------------------------------------------------------------->
+  //* FILTERED DATADB ------------------------------------------------------------------->
   const dataDbLowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
   const dataDbRegExp = new RegExp(`^${dataDbLowerCaseTitles}`)
 
-//* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
+  //* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
   /*
     dataMappedOrFilteredData triggers a filtered data from search input,
     if it's empty, it displays the raw data.

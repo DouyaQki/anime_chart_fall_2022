@@ -16,6 +16,7 @@ input {
 
 img {
   display: block;
+  user-select: none;
 }
 
 /* ===== Scrollbar CSS ===== */

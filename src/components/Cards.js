@@ -41,8 +41,6 @@ const Cards = ({
   const [imgOnError, setImgOnError] = useState('grid')
   const cardsDisplay = { display: imgOnError, backgroundColor: cardColorStyle }
 
-
-
   //* USEREF ----------------------------------------------------------------->
   const scrollRef = useRef(null)
 
@@ -137,29 +135,32 @@ const Cards = ({
       />
 
       {/* BOX 2 DATE AND SYNOPSIS */}
-      <section
-        style={textOverflow}
-        className='aired-and-synopsis-container'
-        ref={scrollRef}
-      >
-        <h3 className='aired'>{aired}</h3>
-        <p className='synopsis'>
-          {`${synopsisFirstHalf}${textTooLong}`}
-          <span style={textVisible}>{synopsisSecondHalf}</span>
-        </p>
-      </section>
+      <article className='col-2-container'>
+        <section
+          style={textOverflow}
+          className='aired-and-synopsis-container'
+          ref={scrollRef}
+        >
+          <h3 className='aired left-gap'>{aired}</h3>
+          <p className='synopsis left-gap'>
+            {`${synopsisFirstHalf}${textTooLong}`}
+            <span style={textVisible}>{synopsisSecondHalf}</span>
+          </p>
+        </section>
 
-      {/* BOX 3 GENRES */}
-      <div className='genre-tags'>
-        <div className='tags-box'>
-          {genre.map((el, idx) => (
-            <p key={idx}>{el}</p>
-          ))}
+        {/* BOX 3 GENRES */}
+        <div className='genre-tags'>
+          <div className='tags-box left-gap'>
+            {genre.map((el, idx) => (
+              <p key={idx}>{el}</p>
+            ))}
+          </div>
+
+          <div className='favorite-box' onClick={handleClickFavorite}>
+            <img className='favorite-img' src={btnStyle} alt='#' />
+          </div>
         </div>
-        <div className='favorite-box' onClick={handleClickFavorite}>
-          <img className='favorite-img' src={btnStyle} alt='#' />
-        </div>
-      </div>
+      </article>
     </article>
   )
 }

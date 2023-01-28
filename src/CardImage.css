@@ -1,4 +1,6 @@
 .image-container {
+  display: flex;
+  justify-content: flex-end;
   position: relative;
   height: 15rem;
   grid-area: keyart;
@@ -13,7 +15,7 @@
 .card-img-details-container {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
   padding: 0.5rem;
   position: absolute;
   bottom: 0;
