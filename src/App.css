@@ -1,12 +1,42 @@
+h1 {
+  text-align: center;
+  color: #2b2d42;
+  margin-top: 2rem;
+}
+
+.bk-banner {
+  display: none;
+  position: absolute;
+  top: 0;
+  background-color: #2b2d42;
+  height: 20rem;
+  width: 100%;
+  /* The other z-index is on the .grid-container */
+  z-index: -1;
+}
+
+.app-box {
+  position: relative;
+  height: 14.563rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .search {
   border: none;
   outline-color: #80808080;
+  border: solid 1px gray;
   padding: 0.4rem;
-  width: 100%;
   color: #808080;
   display: flex;
-  border: solid 1px gray;
   border-radius: 0.2rem;
+  width: 100%;
 }
 
 .search:focus {
@@ -15,4 +45,6 @@
 
 h2 {
   color: #5c728a;
+  margin: 1rem 0;
+  font-size: 1.8rem;
 }

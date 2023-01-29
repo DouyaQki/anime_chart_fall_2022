@@ -68,13 +68,16 @@ const App = () => {
         }
 
         setDataDbError(true)
-
         setDataDb(null)
-        throw new Error('something happened')
+        throw new Error('something happened', {
+          cause: {
+            response,
+          },
+        })
       } catch (error) {
-        console.log('An error occurred')
+        console.log(error.cause?.response?.status)
         controller.abort()
-        console.log(`aborted? ${signal.aborted}`)
+        console.log(`aborted: ${signal.aborted}`)
       }
     }
 
@@ -137,27 +140,34 @@ const App = () => {
     : null
 
   return (
-    <div>
-      <input
-        type='search'
-        className='search'
-        placeholder='Filter anime'
-        value={inputSearch.input}
-        onChange={handleChange}
-        disabled={dataDbError}
-      />
+    <>
+      <h1>Anime Chart Fall 2022</h1>
+      <div className='bk-banner' />
 
-      {/* ErrorData is a styled components */}
-      {dataDbError && <ErrorData />}
-
-      <main>
-        {dataDb && <h2>TV</h2>}
-        <div className='card'>
-          {/* If user searches something, the filtered dataDb is displayed. */}
-          {dataMappedOrFilteredData}
+      <div className='app-box'>
+        <div className='search-container'>
+          <input
+            type='search'
+            className='search'
+            placeholder='Filter anime'
+            value={inputSearch.input}
+            onChange={handleChange}
+            disabled={dataDbError}
+          />
         </div>
-      </main>
-    </div>
+
+        {/* ErrorData is a styled components */}
+        {dataDbError && <ErrorData />}
+
+        <main>
+          {dataDb && <h2>TV</h2>}
+          <div className='card'>
+            {/* If user searches something, the filtered dataDb is displayed. */}
+            {dataMappedOrFilteredData}
+          </div>
+        </main>
+      </div>
+    </>
   )
 }
 
