@@ -3,6 +3,7 @@ import { reactLocalStorage } from 'reactjs-localstorage'
 import './App.css'
 import Cards from './components/Cards'
 import ErrorData from './components/ErrorData'
+import arrow_up from './assets/arrow_up.png'
 
 // This is for localStore purposes.
 export const LOCAL_DATA = 'localData'
@@ -139,6 +140,32 @@ const App = () => {
       : dataDb?.fall_2022?.map(mapDataDbCallBack)
     : null
 
+  //* GO UP BUTTON ------------------------------------------------->
+  const SCROLL_HIDDEN = 'scroll-btn-hidden'
+  const SCROLL_VISIBLE = 'scroll-btn'
+
+  const [scrollBtnHidden, setScrollBtnHidden] = useState(SCROLL_HIDDEN)
+  
+
+  useEffect(() => {
+    
+    window.addEventListener('scroll', () => {
+      const SCROLL_Y = Math.floor(window.scrollY)
+      console.log()
+
+      if (SCROLL_Y > 3000) {
+        setScrollBtnHidden(SCROLL_VISIBLE)
+        return
+      }
+      
+      setScrollBtnHidden(SCROLL_HIDDEN)
+    })
+
+    return () => {
+      window.removeEventListener('scroll', () => {})
+    }
+  }, [])
+
   return (
     <>
       <h1>Anime Chart Fall 2022</h1>
@@ -167,6 +194,13 @@ const App = () => {
           </div>
         </main>
       </div>
+
+      <button
+        className={scrollBtnHidden}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <img src={arrow_up} alt="arrow up" className='img-btn-up' />
+      </button>
     </>
   )
 }

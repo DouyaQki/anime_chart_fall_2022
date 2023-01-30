@@ -5,7 +5,6 @@ h1 {
 }
 
 .bk-banner {
-  display: none;
   position: absolute;
   top: 0;
   background-color: #2b2d42;
@@ -47,4 +46,31 @@ h2 {
   color: #5c728a;
   margin: 1rem 0;
   font-size: 1.8rem;
+}
+
+.scroll-btn {
+  position: fixed;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: none;
+  color: #fafafa;
+  background-color: #2b2d42;
+  bottom: 3rem;
+  right: 2rem;
+  opacity: 1;
+  transition: opacity 1s ease;
+  cursor: pointer;
+}
+
+.scroll-btn-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.img-btn-up {
+  margin: 0 auto;
+  max-height: 50%;
+  cursor: pointer;
 }
