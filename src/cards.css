@@ -2,6 +2,10 @@
   --card-col2-color: #5c728a;
 }
 
+.bk-banner {
+  display: none;
+}
+
 .card {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 100%));

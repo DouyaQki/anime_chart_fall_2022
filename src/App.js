@@ -168,10 +168,10 @@ const App = () => {
 
   return (
     <>
-      <h1>Anime Chart Fall 2022</h1>
       <div className='bk-banner' />
 
       <div className='app-box'>
+      <h1>Anime Chart Fall 2022</h1>
         <div className='search-container'>
           <input
             type='search'
