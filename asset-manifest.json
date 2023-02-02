@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/anime_chart_fall_2022/static/css/main.e9f2bd94.css",
-    "main.js": "/anime_chart_fall_2022/static/js/main.a3acd7bd.js",
+    "main.js": "/anime_chart_fall_2022/static/js/main.44e4765f.js",
     "index.html": "/anime_chart_fall_2022/index.html",
     "main.e9f2bd94.css.map": "/anime_chart_fall_2022/static/css/main.e9f2bd94.css.map",
-    "main.a3acd7bd.js.map": "/anime_chart_fall_2022/static/js/main.a3acd7bd.js.map"
+    "main.44e4765f.js.map": "/anime_chart_fall_2022/static/js/main.44e4765f.js.map"
   },
   "entrypoints": [
     "static/css/main.e9f2bd94.css",
-    "static/js/main.a3acd7bd.js"
+    "static/js/main.44e4765f.js"
   ]
 }
