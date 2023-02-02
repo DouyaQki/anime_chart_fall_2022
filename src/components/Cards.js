@@ -34,7 +34,7 @@ const Cards = ({
   const [btnText, setBtnText] = useState('+')
 
   //* When onError images trigger. ---------------------------->
-  const cardColorStyle = follow ? '#91eea841' : '#fafcfc'
+  const cardColorStyle = follow ? '#ccffcc' : '#fafcfc'
 
   const [imgOnError, setImgOnError] = useState('grid')
   const cardsDisplay = { display: imgOnError, backgroundColor: cardColorStyle }
