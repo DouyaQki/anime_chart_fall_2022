@@ -151,7 +151,6 @@ const App = () => {
     
     window.addEventListener('scroll', () => {
       const SCROLL_Y = Math.floor(window.scrollY)
-      console.log()
 
       if (SCROLL_Y > 3000) {
         setScrollBtnHidden(SCROLL_VISIBLE)

@@ -92,13 +92,14 @@ const Cards = ({
     scrollRef.current.scrollTop = 0
   }
 
+  //* change button behaviors ----------------------->
+  const FAVORITE_ADDED = '+'
+  const FAVORITE_REMOVED = '-'
+
   const handleClickFavorite = (e) => {
     const { textContent } = e.target
-    const FAVORITE_ADDED = '+'
-    const FAVORITE_REMOVED = '-'
 
     if (textContent === FAVORITE_ADDED) {
-      console.log(FAVORITE_ADDED)
       setBtnText(FAVORITE_REMOVED)
 
       const showFollowedIdx = dataDb?.fall_2022?.findIndex(
@@ -180,7 +181,7 @@ const Cards = ({
             onMouseEnter={handleButtonEnter}
             onMouseLeave={handleButtonLeave}
           >
-            {btnText}
+            {follow ? FAVORITE_REMOVED : FAVORITE_ADDED}
           </button>
         </div>
       </article>
