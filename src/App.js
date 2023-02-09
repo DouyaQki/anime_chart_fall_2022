@@ -120,7 +120,6 @@ const App = () => {
 
   //* FILTERED DATADB ------------------------------------------------------------------->
   const dataDbLowerCaseTitles = inputSearch.toLocaleLowerCase().trim()
-  const dataDbRegExp = new RegExp(`^${dataDbLowerCaseTitles}`)
 
   //* THIS DISPLAY ALL THE CARDS MAPPED ------------------------------------------------->
   /*
@@ -135,7 +134,7 @@ const App = () => {
   const dataMappedOrFilteredData = dataDb
     ? inputSearch.length >= 1
       ? dataDb?.fall_2022
-          ?.filter(({ title }) => dataDbRegExp.test(title.toLocaleLowerCase()))
+          ?.filter(({ title }) => title.toLocaleLowerCase().includes(dataDbLowerCaseTitles))
           .map(mapDataDbCallBack)
       : dataDb?.fall_2022?.map(mapDataDbCallBack)
     : null
